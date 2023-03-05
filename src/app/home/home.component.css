@@ -106,7 +106,21 @@ body {
     font-size: 20px;
 }
 
+.CV-Button button{
+    margin: 10px 0px;
+    font-size: 18px;
+    padding: 7px 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--SiteColor);
+    color: var(--white);
+    cursor: pointer;
+    transform: scale(1);
+}
 
+.CV-Button button:hover{
+    transform: scale(1.1);
+}
 
 
 

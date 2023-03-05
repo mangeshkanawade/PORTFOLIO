@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { saveAs } from 'file-saver';
 declare var $: any;
 
 @Component({
@@ -18,9 +20,10 @@ export class HomeComponent implements OnInit {
   ShowMobileMenus : boolean = false;
   RandomBackgroundImage : string = '';
   ImagePath : string = '../../assets/images/';
+  PDFPath : string = '../../assets/pdfs/';
   RandNumberRange : number = 2 
 
-  constructor() { }
+  constructor(private http : HttpClient) { }
 
   ngOnInit(): void {
     this.RandomBackgroundImage = this.GetRandomImage()
@@ -50,4 +53,13 @@ export class HomeComponent implements OnInit {
     await this.SetMenuIsActive(PageName);
   }
 
+  DownloadPDFFile() {
+    const headers = new HttpHeaders().set('Content-Type', 'application/pdf');
+    this.http.get(this.PDFPath + 'Mangesh_Kanawade.pdf', {
+      headers,
+      responseType: 'blob'
+    }).subscribe(blob => {
+      saveAs(blob, 'Mangesh_Kanawade_Resume.pdf');
+    });
+  }
 }
