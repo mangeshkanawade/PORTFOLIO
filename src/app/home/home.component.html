@@ -1,0 +1,59 @@
+<body [ngStyle]="{ 'background-image': RandomBackgroundImage }">
+    <header>
+        <div class="navbar">
+            <div class="sitename">Portfolio<span> Site</span></div>
+            <ul class="options">
+                <li class="option">
+                    <a [ngClass]="{ active: IsMenuActive('Home') }" id="Home" (click)="NavigateTo('Home')">Home</a>
+                </li>
+                <li class="option">
+                    <a [ngClass]="{ active: IsMenuActive('About') }" id="About" (click)="NavigateTo('About')">About</a>
+                </li>
+                <li class="option">
+                    <a [ngClass]="{ active: IsMenuActive('Projects') }" id="Projects"
+                        (click)="NavigateTo('Projects')">Projects</a>
+                </li>
+                <li class="option">
+                    <a [ngClass]="{ active: IsMenuActive('ContactMe') }" id="ContactMe"
+                        (click)="NavigateTo('ContactMe')">Contact me</a>
+                </li>
+            </ul>
+            <div class="bars" (click)="ShowMobileMenus = !ShowMobileMenus">
+                <span *ngIf="!ShowMobileMenus"><i class="fa-solid fa-bars"></i></span>
+                <span *ngIf="ShowMobileMenus"><i class="fa-solid fa-xmark"></i></span>
+            </div>
+        </div>
+
+        <!-- Visible in Mobile View -->
+        <ng-container *ngIf="ShowMobileMenus">
+            <div class="options-mobile">
+                <ul>
+                    <li>
+                        <a [ngClass]="{ active: IsMenuActive('Home') }" id="Home" (click)="NavigateTo('Home')"
+                            class="active">Home</a>
+                    </li>
+                    <li>
+                        <a [ngClass]="{ active: IsMenuActive('About') }" id="About"
+                            (click)="NavigateTo('About')">About</a>
+                    </li>
+                    <li>
+                        <a [ngClass]="{ active: IsMenuActive('Projects') }" id="Projects"
+                            (click)="NavigateTo('Projects')">Projects</a>
+                    </li>
+                    <li>
+                        <a [ngClass]="{ active: IsMenuActive('ContactMe') }" id="ContactMe"
+                            (click)="NavigateTo('ContactMe')">Contact Me</a>
+                    </li>
+                </ul>
+            </div>
+        </ng-container>
+    </header>
+
+    <section>
+        <div class="content">
+            <h4>Hello, my name is</h4>
+            <h1>Mangesh Kanawade</h1>
+            <h3>I am a Full stack Developer.</h3>
+        </div>
+    </section>
+</body>

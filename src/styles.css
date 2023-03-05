@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+    --SiteColor: #f45d; /* #00fff3dd */
+    --white: #ffffff; 
+
+    --SiteColorTransperant : #eeeeee1a;
+  }
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Tajawal';
+}
